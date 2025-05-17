@@ -1,6 +1,6 @@
 {
-  "projectName": "shopping-club",
-  "projectOwner": "cubos-vtex",
+  "projectName": "",
+  "projectOwner": "",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "imageSize": 100,
   "commit": true,
-  "commitConvention": "none",
+  "commitConvention": "angular",
   "contributors": [],
   "contributorsPerLine": 7,
   "commitType": "docs"

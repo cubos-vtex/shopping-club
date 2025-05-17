@@ -1,0 +1,22 @@
+{
+  "memory": 1024,
+  "ttl": 60,
+  "timeout": 60,
+  "minReplicas": 2,
+  "maxReplicas": 60,
+  "workers": 4,
+  "routes": {
+    "getRepositoriesByOrg": {
+      "path": "/_v/shopping-club/get-repositories-by-org/:org",
+      "public": true
+    },
+    "tasks": {
+      "path": "/_v/shopping-club/tasks",
+      "public": true
+    },
+    "tasksId": {
+      "path": "/_v/shopping-club/tasks/:id",
+      "public": true
+    }
+  }
+}

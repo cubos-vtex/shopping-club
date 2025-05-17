@@ -1,0 +1,20 @@
+{
+  "store.list-repositories": {
+    "allowed": "*"
+  },
+  "store.list-repositories-graphql": {
+    "allowed": "*"
+  },
+  "store.tasks": {
+    "allowed": "*"
+  },
+  "list-repositories": {
+    "component": "ListRepositories"
+  },
+  "list-repositories-graphql": {
+    "component": "ListRepositoriesGraphQL"
+  },
+  "tasks": {
+    "component": "Tasks"
+  }
+}

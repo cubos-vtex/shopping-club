@@ -1,12 +1,5 @@
-import getRepositoriesByOrg from './getRepositoriesByOrg'
-import tasks from './tasks'
-import tasksId from './tasksId'
+import session from './session'
+import users from './users'
+import usersId from './usersId'
 
-export default {
-  // Get GitHub repositories by a given organization
-  getRepositoriesByOrg,
-
-  // Tasks CRUD
-  tasks,
-  tasksId,
-}
+export default { users, usersId, session }

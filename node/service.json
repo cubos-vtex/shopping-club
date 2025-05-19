@@ -6,16 +6,16 @@
   "maxReplicas": 60,
   "workers": 4,
   "routes": {
-    "getRepositoriesByOrg": {
-      "path": "/_v/shopping-club/get-repositories-by-org/:org",
+    "users": {
+      "path": "/_v/shopping-club/users",
       "public": true
     },
-    "tasks": {
-      "path": "/_v/shopping-club/tasks",
+    "usersId": {
+      "path": "/_v/shopping-club/users/:id",
       "public": true
     },
-    "tasksId": {
-      "path": "/_v/shopping-club/tasks/:id",
+    "session": {
+      "path": "/_v/shopping-club/session",
       "public": true
     }
   }

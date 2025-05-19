@@ -1,4 +1,8 @@
-import { AuthenticationError, ForbiddenError } from '@vtex/api'
+import { AuthenticationError, ForbiddenError, NotFoundError } from '@vtex/api'
+
+export function throwNotFoundError(entity: string): never {
+  throw new NotFoundError(`Document not found in entity ${entity}`)
+}
 
 export function throwAuthenticationError(): never {
   throw new AuthenticationError('store/not-authenticated-error')

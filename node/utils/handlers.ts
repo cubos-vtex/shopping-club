@@ -1,5 +1,4 @@
 import { checkSchemas, setResponseMetadata, setupControllers } from '.'
-import { checkStoreUser } from './checkStoreUser'
 
 function generateHandler(handler: Handler) {
   return async function genericHandler(ctx: Context, next?: NextFn) {
@@ -16,10 +15,6 @@ export function createHandlers(handlers: Handler[]) {
   ]
 }
 
-export function createStoreAuthenticatedHandlers(handlers: Handler[]) {
-  return createHandlers([checkStoreUser, ...handlers])
-}
-
-export function createAuthenticatedMasterdataHandlers(handlers: Handler[]) {
-  return createStoreAuthenticatedHandlers([checkSchemas, ...handlers])
+export function createMasterdataHandlers(handlers: Handler[]) {
+  return createHandlers([checkSchemas, ...handlers])
 }

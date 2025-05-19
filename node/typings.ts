@@ -3,8 +3,8 @@ import type { RecorderState, ServiceContext } from '@vtex/api'
 import type { Clients } from './clients'
 import type {
   AppSettingsController,
-  GithubController,
-  TaskMasterdataController,
+  SessionMasterdataController,
+  UserMasterdataController,
 } from './controllers'
 
 declare global {
@@ -13,8 +13,8 @@ declare global {
     RecorderState & {
       storeUserEmail?: string
       appSettingsController: AppSettingsController
-      githubController: GithubController
-      taskMasterdataController: TaskMasterdataController
+      userMasterdataController: UserMasterdataController
+      sessionMasterdataController: SessionMasterdataController
     }
   >
 
@@ -24,44 +24,21 @@ declare global {
 
   type AppSettings = { schemaHash: string }
 
-  type Repository = {
-    owner: {
-      login: string
-      avatar_url: string
-    }
-    html_url: string
-    name: string
-    description: string
-    visibility: 'public' | 'private'
-  }
-
-  type GetOrgRepositoriesResponse = {
-    org: {
-      name: string
-      avatarUrl?: string
-    }
-    repositories: Array<
-      Pick<Repository, 'name' | 'description'> & {
-        url: string
-      }
-    >
-  }
-
-  type GetOrgRepositoriesArgs = {
-    org: string
-    sort?: string
-    direction?: string
-  }
-
   type MasterdataInternalFields = {
     id: string
     createdIn: string
     lastInteractionIn: string
   }
 
-  type Task = MasterdataInternalFields & {
+  type User = MasterdataInternalFields & {
+    code: string
+    name: string
     email: string
-    title: string
-    description: string
+    password: string
+  }
+
+  type Session = MasterdataInternalFields & {
+    email: string
+    expiration: number
   }
 }

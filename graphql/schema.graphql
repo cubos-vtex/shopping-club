@@ -1,7 +1,0 @@
-type Query {
-  getGitHubRepositoriesByOrg(
-    org: ID!
-    sort: String
-    direction: String
-  ): GitHubOrganizationRepositories @cacheControl(scope: PUBLIC, maxAge: SHORT)
-}

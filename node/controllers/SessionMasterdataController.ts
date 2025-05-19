@@ -23,9 +23,15 @@ export class SessionMasterdataController extends BaseMasterdataController<Sessio
 
     if (existingSession) {
       if (existingSession.expiration > Date.now()) {
-        this.ctx.set('club-session', existingSession.id)
+        const newSession = {
+          ...existingSession,
+          expiration: Date.now() + ONE_DAY_IN_MS,
+        }
 
-        return { ...existingSession, user }
+        await this.updatePartialDocument(existingSession.id, newSession)
+        this.ctx.set('club-session', newSession.id)
+
+        return { ...newSession, user }
       }
 
       this.deleteDocument(existingSession.id)
